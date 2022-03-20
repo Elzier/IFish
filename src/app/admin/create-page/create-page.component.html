@@ -1,0 +1,41 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <h1>New post creating</h1>
+  <div class="form-control"
+       [ngClass]="{invalid: formService.touchedAndInvalidControl('title')}"
+  >
+    <label for="title">Post title:</label>
+    <input id="title" type="text" formControlName="title">
+    <div class="validation" *ngIf="formService.touchedAndInvalidControl('title')">
+      <small
+        *ngIf="form.get('title')?.errors?.['required']"
+      >
+        Enter title, please!
+      </small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label for="title">Post content:</label>
+    <quill-editor theme="bubble" formControlName="text"></quill-editor>
+  </div>
+
+  <div class="form-control"
+       [ngClass]="{invalid: formService.touchedAndInvalidControl('author')}"
+  >
+    <label for="author">Post author:</label>
+    <input id="author" type="text" formControlName="author">
+    <div class="validation" *ngIf="formService.touchedAndInvalidControl('author')">
+      <small
+        *ngIf="form.get('author')?.errors?.['required']"
+      >
+        Enter post author, please!
+      </small>
+    </div>
+  </div>
+
+  <button
+    type="submit" class="btn btn-primary"
+
+  >
+    Create post</button>
+</form>

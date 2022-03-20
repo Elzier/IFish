@@ -1,0 +1,52 @@
+<form class="card" [formGroup]="loginForm">
+  <h2>Admin panel</h2>
+  <div class="alert" *ngIf="message">{{message}}</div>
+  <div class="alert alert-danger" *ngIf="auth.error$ | async as error">{{error}}</div>
+
+  <div class="form-control"
+    [ngClass]="{invalid: formService.touchedAndInvalidControl('email')}"
+  >
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email">
+    <div class="validation" *ngIf="formService.touchedAndInvalidControl('email')">
+      <small
+        *ngIf="loginForm.get('email')?.errors?.['required']"
+      >
+        Enter email, please!
+      </small>
+      <small
+        *ngIf="loginForm.get('email')?.errors?.['email']"
+      >
+        Email field must be real
+      </small>
+    </div>
+  </div>
+
+  <div class="form-control"
+    [ngClass]="{invalid: formService.touchedAndInvalidControl('password')}"
+  >
+    <label for="password">Password:</label>
+    <input id="password" type="password" formControlName="password">
+    <div class="validation" *ngIf="formService.touchedAndInvalidControl('password')">
+      <small
+        *ngIf="loginForm.get('password')?.errors?.['required']"
+      >
+        Enter password, please!
+      </small>
+      <small
+        *ngIf="loginForm.get('password')?.errors?.['minlength']"
+      >
+        Password is too short. There are
+        {{formService.calcCntrlRemainChars('password')}}
+        characters left.
+      </small>
+    </div>
+  </div>
+
+  <button
+    type="submit" class="btn btn-primary"
+    [disabled]="loginForm.invalid || submitted"
+    (click)="submit()"
+  >
+    Sign in</button>
+</form>

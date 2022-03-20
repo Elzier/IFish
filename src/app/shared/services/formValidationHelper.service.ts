@@ -3,17 +3,15 @@ import { FormGroup } from '@angular/forms'
 
 
 @Injectable({providedIn: 'root'})
-export class FormService {
+export class FormValidationHelperService {
 
-  constructor(public form: FormGroup) {
-
-  }
+  constructor(private form: FormGroup) {}
 
   public touchedAndInvalidControl(controlName: string): boolean {
     return !!(this.form.get(controlName)?.touched && this.form.get(controlName)?. invalid)
   }
 
-  public calcPasswordRemainChars(controlName: string): number {
+  public calcCntrlRemainChars(controlName: string): number {
     const passMinLength = this.form.get(controlName)?.errors?.['minlength']
     return passMinLength?.['requiredLength'] - passMinLength?.['actualLength']
   }
