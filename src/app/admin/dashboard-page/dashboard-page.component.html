@@ -20,9 +20,9 @@
       <td>{{ post.date | date:'medium' }}</td>
       <td>
         <button [routerLink]="['/admin', 'post', post.id, 'edit']" class="btn btn-link open">
-          Открыть
+          Open
         </button>
-        <a (click)="delete(post.id)">Удалить</a>
+        <a (click)="delete(post.id)">delete</a>
       </td>
     </tr>
     </tbody>
@@ -31,5 +31,5 @@
 
 
 <ng-template #loading>
-  <p class="text-center">Идет загрузка...</p>
+  <p class="text-center">Loading...</p>
 </ng-template>
