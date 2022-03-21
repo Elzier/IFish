@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core'
+import { Component, OnDestroy } from '@angular/core'
 import { PostService } from '../../shared/services/post.service'
 import { Subscription } from 'rxjs'
 import { Post } from '../../shared/interfaces'

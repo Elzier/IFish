@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { FbDbResponse, Post } from '../interfaces'
-import { map, Observable, of, tap } from 'rxjs'
+import { catchError, map, Observable, of, tap, throwError } from 'rxjs'
 import { environment } from '../../../environments/environment'
 
 @Injectable({providedIn: 'root'})
@@ -20,7 +20,7 @@ export class PostService {
   }
 
   fetchPosts():Observable<Post[]> {
-    return this.http.get(`${environment.fbDbUrl}/posts.json`).pipe(
+    return this.http.get<Post[] | null>(`${environment.fbDbUrl}/posts.json`).pipe(
       map((res: {[key: string]: any} | null) => {
         if (res === null) {
           return []
@@ -34,7 +34,30 @@ export class PostService {
     )
   }
 
+  fetchPost(id: string): Observable<Post | null> {
+    return this.http.get<Post | null>(`${environment.fbDbUrl}/posts/${id}.json`).pipe(
+      map((res: Post | null) => {
+        if (res === null) {
+          return null
+        }
+        return {
+          ...res,
+          id,
+          date: new Date(res.date)
+        }
+      }),
+      catchError((err) => {
+        console.log(err)
+        return throwError(err)
+      })
+    )
+  }
+
   deletePost(id: string): Observable<void> {
     return this.http.delete<void>(`${environment.fbDbUrl}/posts/${id}.json`)
   }
+
+  // editPost(id: string): Observable<Post> {
+  //   return this.http.ge
+  // }
 }
