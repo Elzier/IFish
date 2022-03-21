@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { SharedModule } from '../shared/shared.module'
 import { AuthService } from './shared/services/auth.service'
 import { AuthGuard } from './shared/services/auth.guard'
+import { SearchPipe } from './shared/pipes/search.pipe'
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AuthGuard } from './shared/services/auth.guard'
     CreatePageComponent,
     EditPageComponent,
     DashboardPageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    SearchPipe
   ],
   imports: [
     CommonModule,
@@ -32,7 +34,7 @@ import { AuthGuard } from './shared/services/auth.guard'
           {path: 'login', component: LoginPageComponent},
           {path: 'dashboard', component: DashboardPageComponent, canActivate: [AuthGuard]},
           {path: 'create', component: CreatePageComponent, canActivate: [AuthGuard]},
-          {path: 'post/:id', component: EditPageComponent, canActivate: [AuthGuard]}
+          {path: 'post/:id/edit', component: EditPageComponent, canActivate: [AuthGuard]}
         ]
       }
     ])
