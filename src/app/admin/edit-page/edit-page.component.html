@@ -1,1 +1,39 @@
-<p>edit-page works!</p>
+<div>
+  <form *ngIf="!loading && form" [formGroup]="form" (ngSubmit)="editPost()">
+    <div class="form-control">
+      <label for="title">Post name:</label>
+      <input id="title" type="text" formControlName="title">
+      <div class="validation">
+        <small>
+          Enter post name
+        </small>
+      </div>
+    </div>
+
+    <div class="form-control">
+      <quill-editor theme="bubble"   formControlName="text"></quill-editor>
+    </div>
+
+    <button
+      class="btn btn-primary"
+      type="submit"
+      [disabled]="form.invalid || submitted"
+    >Update</button>
+  </form>
+</div>
+
+<div *ngIf="!loading && !form;">
+  <div class="alert">
+    There is no post with provided ID :(
+  </div>
+  <a
+    class="btn btn-primary"
+    type="submit"
+    [routerLink]="['/admin', 'dashboard']"
+  >Go to dashboard</a>
+</div>
+
+
+<div *ngIf="loading">
+  <p class="text-center">Loading...</p>
+</div>

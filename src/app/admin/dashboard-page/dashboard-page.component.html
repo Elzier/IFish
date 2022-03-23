@@ -1,4 +1,4 @@
-<div *ngIf="posts.length; else loading">
+<div *ngIf="!loading && posts.length > 0">
   <div class="form-control">
     <input type="text" placeholder="Search by title..." [(ngModel)]="searchStr">
   </div>
@@ -30,6 +30,17 @@
 </div>
 
 
-<ng-template #loading>
+<div *ngIf="!loading && !posts.length;">
+  <div class="alert">
+    There is no posts yet :(
+  </div>
+  <a
+    class="btn btn-primary"
+    type="submit"
+    [routerLink]="['/admin', 'create']"
+  >Create new post</a>
+</div>
+
+<ng-template *ngIf="loading">
   <p class="text-center">Loading...</p>
 </ng-template>
