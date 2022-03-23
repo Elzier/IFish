@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 import { FormValidationHelperService } from '../../shared/services/formValidationHelper.service'
 import { FormBuilder, Validators } from '@angular/forms'
 import { Post } from '../../shared/interfaces'
