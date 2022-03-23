@@ -1,5 +1,5 @@
 <div>
-  <form *ngIf="!loading && form" [formGroup]="form">
+  <form *ngIf="!loading && form" [formGroup]="form" (ngSubmit)="editPost()">
     <div class="form-control">
       <label for="title">Post name:</label>
       <input id="title" type="text" formControlName="title">
@@ -17,6 +17,7 @@
     <button
       class="btn btn-primary"
       type="submit"
+      [disabled]="form.invalid || submitted"
     >Update</button>
   </form>
 </div>

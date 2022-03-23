@@ -8,7 +8,7 @@ import { environment } from '../../../environments/environment'
 export class PostService {
   constructor(private http: HttpClient) {}
 
-  createPost(post: Post): Observable<Post> {
+  create(post: Post): Observable<Post> {
     return this.http.post<FbDbResponse>(`${environment.fbDbUrl}/posts.json`, post).pipe(
       map((res: FbDbResponse) => {
         return {
@@ -19,7 +19,7 @@ export class PostService {
     )
   }
 
-  fetchPosts():Observable<Post[]> {
+  fetchAll():Observable<Post[] | null> {
     return this.http.get<Post[] | null>(`${environment.fbDbUrl}/posts.json`).pipe(
       map((res: {[key: string]: any} | null) => {
         if (res === null) {
@@ -34,7 +34,7 @@ export class PostService {
     )
   }
 
-  fetchPost(id: string): Observable<Post | null> {
+  fetchById(id: string): Observable<Post | null> {
     return this.http.get<Post | null>(`${environment.fbDbUrl}/posts/${id}.json`).pipe(
       map((res: Post | null) => {
         if (res === null) {
@@ -53,11 +53,11 @@ export class PostService {
     )
   }
 
-  deletePost(id: string): Observable<void> {
+  delete(id: string): Observable<void> {
     return this.http.delete<void>(`${environment.fbDbUrl}/posts/${id}.json`)
   }
 
-  // editPost(id: string): Observable<Post> {
-  //   return this.http.ge
-  // }
+  update(post: Post): Observable<any> {
+    return this.http.put(`${environment.fbDbUrl}/posts/${post.id}.json`, post)
+  }
 }

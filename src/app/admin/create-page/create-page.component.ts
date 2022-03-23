@@ -3,6 +3,7 @@ import { FormValidationHelperService } from '../../shared/services/formValidatio
 import { FormBuilder, Validators } from '@angular/forms'
 import { Post } from '../../shared/interfaces'
 import { PostService } from '../../shared/services/post.service'
+import { AlertService } from '../shared/services/alert.service'
 
 @Component({
   selector: 'app-create-page',
@@ -11,6 +12,7 @@ import { PostService } from '../../shared/services/post.service'
 })
 export class CreatePageComponent {
 
+  submitted = false
   formService: FormValidationHelperService
 
   form = this.fb.group({
@@ -19,7 +21,12 @@ export class CreatePageComponent {
     author: [null, [Validators.required]]
   })
 
-  constructor(private fb: FormBuilder, private postService: PostService) {
+  constructor(
+    private fb: FormBuilder,
+    private postService: PostService,
+    private alertService: AlertService
+  )
+  {
     this.formService = new FormValidationHelperService(this.form)
   }
 
@@ -33,8 +40,11 @@ export class CreatePageComponent {
       author: this.form.value.author,
       date: new Date()
     }
-    this.postService.createPost(post).subscribe(() => {
+    this.submitted = true
+    this.postService.create(post).subscribe(() => {
       this.form.reset()
+      this.alertService.success('Post successfully added!')
+      this.submitted = false
     })
   }
 }
