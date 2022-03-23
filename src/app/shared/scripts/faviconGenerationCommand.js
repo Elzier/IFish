@@ -1,14 +1,14 @@
-// usage: node {path to script}
+// usage: type "node {path_to_script}"
 
 import fs from "fs"
 import favicons from "favicons"
 
-const source = "/Users/elizier/Downloads/BBlog.png"
+const source = "{pathToIcon}.png"
 const faviconsPath = "./src/assets/icons"
-const faviconsHtmlPath = "./src/favicons.njk"
+const faviconsHtmlPath = "./src/favicons.njk"   // path where html with imports should be generated
 
 const configuration = {
-  path: "/assets/favicons",
+  path: "/assets/icons",
   appName: "blog",
   appShortName: null,
   appDescription: null,
