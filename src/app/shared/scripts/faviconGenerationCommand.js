@@ -8,7 +8,7 @@ const faviconsPath = "./src/assets/icons"
 const faviconsHtmlPath = "./src/favicons.njk"   // path where html with imports should be generated
 
 const configuration = {
-  path: "/assets/icons",
+  path: "assets/icons",
   appName: "blog",
   appShortName: null,
   appDescription: null,
@@ -35,7 +35,7 @@ const configuration = {
     favicons: true,
     firefox: false,
     windows: false,
-    yandex: true,
+    yandex: false,
   },
 };
 
