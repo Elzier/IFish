@@ -30,7 +30,8 @@ export class PostService {
           id: key,
           date: new Date(res[key].date)
         }))
-      })
+      }),
+      catchError(err => throwError(err))
     )
   }
 
@@ -46,10 +47,7 @@ export class PostService {
           date: new Date(res.date)
         }
       }),
-      catchError((err) => {
-        console.log(err)
-        return throwError(err)
-      })
+      catchError((err) => throwError(err))
     )
   }
 
