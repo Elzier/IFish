@@ -17,10 +17,9 @@ export class CreatePageComponent {
 
   form = this.fb.group({
     title: [null, [Validators.required]],
-    text: [null, [Validators.required, Validators.minLength(20)]],
+    text: [null],
     author: [null, [Validators.required]]
   })
-
   constructor(
     private fb: FormBuilder,
     private postService: PostService,

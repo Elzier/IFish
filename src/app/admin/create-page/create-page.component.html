@@ -14,9 +14,32 @@
     </div>
   </div>
 
-  <div class="form-control">
+  <div>
     <label for="title">Post content:</label>
-    <quill-editor theme="bubble" formControlName="text"></quill-editor>
+    <div class="form-control">
+      <quill-editor
+        theme="snow"
+        classes="quel-view"
+        formControlName="text"
+        [minLength]="20"
+        [required]="true"
+      ></quill-editor>
+      <div class="validation" *ngIf="formService.touchedAndInvalidControl('text')">
+        <small
+          *ngIf="form.get('text')?.errors?.['required']"
+        >
+          Enter password, please!
+        </small>
+        <small
+          class="too-short"
+          *ngIf="form.get('text')?.hasError('minLengthError')"
+        >
+          Post text is too short. There are
+          {{formService.calcQuillCntrlRemainChars('text')}}
+          characters left.
+        </small>
+      </div>
+    </div>
   </div>
 
   <div class="form-control"

@@ -1,16 +1,27 @@
-<div class="post"
-     *ngIf="post$ | async as post"
->
-  <div class="header">
-    <h1>{{ post.title }}</h1>
+<div *ngIf="post$ | obsWithStatus| async as obs">
+  <ng-template [ngIf]="obs.value">
+    <div class="post">
+      <div class="header">
+        <h1>{{ obs.value.title }}</h1>
+      </div>
+      <div class="subheader">
+        <div class="info">
+          <strong>{{ obs.value.author }}</strong>
+          <small>{{ obs.value.date | date:'MMM d, y' }}</small>
+        </div>
+        <button routerLink="/" class="btn btn-link">Home Page</button>
+      </div>
 
-    <button routerLink="/" class="btn btn-link">Home Page</button>
-  </div>
-
-  <div class="info">
-    <strong>{{ post.author }}</strong>
-    <small>{{ post.date | date:'medium' }}</small>
-  </div>
-
-  <quill-view-html [content]="post.text"></quill-view-html>
+      <quill-view-html class="quel-view" [content]="obs.value.text"></quill-view-html>
+    </div>
+  </ng-template>
+  <ng-template [ngIf]="obs.loading">Loading...</ng-template>
+  <ng-template [ngIf]="obs.error">
+    <div class="error">
+      <h2>{{obs.error}}</h2>
+      <button class="btn btn-white" routerLink="/">Home page</button>
+    </div>
+  </ng-template>
 </div>
+
+

@@ -2,18 +2,23 @@
 
   .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    margin-bottom: 2rem;
   }
 
   h1 {
     margin-bottom: .5rem;
   }
 
-  .info {
-    strong {
-      margin-right: 1rem;
+  .subheader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.6rem;
+    .info {
+      strong {
+        margin-right: 1rem;
+      }
     }
   }
-
 }
