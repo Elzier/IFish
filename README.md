@@ -9,6 +9,10 @@ Firebase service.
 <h2 class="code-line" data-line-start=12 data-line-end=13 ><a id="Demo_12"></a>Demo</h2>
 <p class="has-line-data" data-line-start="13" data-line-end="14">Here is a working live demo : <a href="https://personal-blog-639b1.web.app">IFish</a></p>
 
+<code>git clone https://github.com/Elzier/IFish.git</code>
+cd IFish
+npm install
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
