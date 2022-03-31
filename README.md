@@ -11,7 +11,7 @@ Firebase service.
 
 ## Quick Start
 
-<pre><code class="has-line-data" data-line-start="31" data-line-end="40" class="language-sh">git clone https://github.com/Elzier/IFish.git</code></pre>
+<pre><code>git clone https://github.com/Elzier/IFish.git</code></pre>
 cd IFish
 npm install
 
