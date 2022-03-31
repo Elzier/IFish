@@ -5,11 +5,9 @@
 
 :root {
   --primary-color: #185886;
-  //--dark-color: #333333;
-
-
-  --dark-color: #A6D5FF;
+  --dark-color: #333333;
   //--dark-color: #A6D5FF;
+  --light-blue-color: #A6D5FF;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
@@ -115,12 +113,23 @@ img {
     background: var(--light-color);
     color: #111;
   }
+
+  &.open {
+    display: block;
+    color: var(--danger-color);
+  }
 }
 
 .btn-link {
   background: none;
   padding: 0;
   margin: 0;
+}
+
+.item-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .btn-block {
@@ -325,7 +334,7 @@ table th {
   }
 
   li.active a {
-    color: var(--dark-color);
+    color: var(--light-blue-color);
     font-weight: bold;
     cursor: default;
   }

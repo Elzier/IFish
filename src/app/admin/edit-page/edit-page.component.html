@@ -1,5 +1,9 @@
 <div>
-  <form *ngIf="!loading && form" [formGroup]="form" (ngSubmit)="editPost()">
+  <form
+    *ngIf="!loading && form"
+    [formGroup]="form"
+    (ngSubmit)="editPost()"
+  >
     <div class="form-control">
       <label for="title">Post name:</label>
       <input id="title" type="text" formControlName="title">
@@ -14,11 +18,13 @@
       <quill-editor theme="snow" formControlName="text"></quill-editor>
     </div>
 
-    <button
-      class="btn btn-primary"
-      type="submit"
-      [disabled]="form.invalid || submitted"
-    >Update</button>
+    <div class="ctx__wrapper">
+      <button
+        class="btn btn-primary ctx__update"
+        type="submit"
+        [disabled]="form.invalid || submitted"
+      >Update</button>
+    </div>
   </form>
 </div>
 
