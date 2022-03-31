@@ -12,8 +12,8 @@ Firebase service.
 ## Quick Start
 
 <pre><code>git clone https://github.com/Elzier/IFish.git</code></pre>
-cd IFish
-npm install
+<pre><code>cd IFish</code></pre>
+<pre><code>npm install</code></pre>
 
 ## Development server
 
