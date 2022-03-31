@@ -1,4 +1,4 @@
-# PersonalBlog
+# IFish 🐟
 
 A personal blog dedicated to my hobby - fishing.
 The blog consists of two functional components: the client panel and the admin panel. 
