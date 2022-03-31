@@ -1,6 +1,13 @@
 # PersonalBlog
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
+A personal blog dedicated to my hobby - fishing.
+The blog consists of two functional components: the client panel and the admin panel. 
+The client panel allows you to view posts. The admin panel is protected by authorization. 
+Administrators can add, edit, and delete posts. The data is stored in the database of the 
+Firebase service.
+
+<h2 class="code-line" data-line-start=12 data-line-end=13 ><a id="Demo_12"></a>Demo</h2>
+<p class="has-line-data" data-line-start="13" data-line-end="14">Here is a working live demo : <a href="https://personal-blog-639b1.web.app">IFish</a></p>
 
 ## Development server
 
