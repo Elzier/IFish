@@ -11,7 +11,7 @@ Firebase service.
 
 ## Admin panel screenshots 
 
-<div style="border: 1px solid black;">
+<div style="outline: 1px solid black; background: red;">
   <h3 class="code-line" data-line-start=18 data-line-end=19 ><a id="Project_Structure_18"></a>📋 Dashboard page </h3>
   <p class="has-line-data" data-line-start="19" data-line-end="20"><img src="https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/dashboard.png" width=65%" alt="project structure"></p>
 </div>
