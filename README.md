@@ -11,7 +11,9 @@ Firebase service.
 
 ## Admin panel screenshots 
 
-![Dashboard page](https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/Screenshot%202022-04-03%20at%2014.06.36.png)
+![Dashboard page](https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/dashboard.png)
+![Create page](https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/post-create.png)
+![Edit page](https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/post-edit.png)
 
 ## Quick Start
 
