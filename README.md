@@ -12,8 +12,8 @@ Firebase service.
 ## Admin panel screenshots 
 
 <div style="display: flex; flex-direction: column; align-items: center">
-  <h3>📋 Dashboard page</h3>
-  <p style="margin: 0; width: 90%"><img src="https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/dashboard.png" alt="dashboard"></p>
+  <h3 class="code-line" data-line-start=18 data-line-end=19 ><a id="Project_Structure_18"></a>📋 Dashboard page </h3>
+  <p style="display: inline; margin: 0 auto; width: 90%" class="has-line-data" data-line-start="19" data-line-end="20"><img src="https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/dashboard.png" alt="project structure"></p>
 </div>
 
 📋 Dashboard page ![Dashboard page](https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/dashboard.png)
