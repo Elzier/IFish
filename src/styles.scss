@@ -243,9 +243,10 @@ quill-editor {
   &.invalid {
     .ql-container {
       border-color: var(--danger-color);
+      border-top: unset;
     }
     .ql-toolbar {
-      border-bottom: 1px solid var(--danger-color);;
+      border-bottom: 1px solid var(--danger-color);
     }
   }
 }
@@ -270,18 +271,18 @@ textarea {
       padding: unset;
     }
   }
-  &.ng-touched &.ng-invalid &.ng-dirty {
-    .validation {
-      .too-short {
-        display: block;
-      }
-    }
-  }
-  .validation {
-    .too-short {
-      display: none;
-    }
-  }
+  //&.ng-touched &.ng-invalid &.ng-dirty {
+  //  .validation {
+  //    .too-short {
+  //      display: block;
+  //    }
+  //  }
+  //}
+  //.validation {
+  //  .too-short {
+  //    display: none;
+  //  }
+  //}
 }
 
 input[type='submit'],

@@ -5,6 +5,7 @@ import { PostService } from '../../shared/services/post.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Post } from '../../shared/interfaces'
 import { AlertService } from '../shared/services/alert.service'
+import { FormValidationHelperService } from '../../shared/services/formValidationHelper.service'
 
 @Component({
   selector: 'app-edit-page',
@@ -17,6 +18,7 @@ export class EditPageComponent implements OnInit, OnDestroy {
   post!: Post
   submitted = false
   editSub!: Subscription
+  formService!: FormValidationHelperService
 
   constructor(
     private route: ActivatedRoute,
@@ -42,6 +44,7 @@ export class EditPageComponent implements OnInit, OnDestroy {
           title: [post.title, Validators.required],
           text: [post.text, Validators.required]
         })
+        this.formService = new FormValidationHelperService(this.form)
       }
       this.loading = false
     })

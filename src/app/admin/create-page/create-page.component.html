@@ -23,12 +23,13 @@
         formControlName="text"
         [minLength]="20"
         [required]="true"
+        [ngClass]="{invalid: formService.touchedAndInvalidControl('text')}"
       ></quill-editor>
       <div class="validation" *ngIf="formService.touchedAndInvalidControl('text')">
         <small
           *ngIf="form.get('text')?.errors?.['required']"
         >
-          Enter password, please!
+          Field can't be empty!
         </small>
         <small
           class="too-short"
