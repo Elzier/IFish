@@ -9,6 +9,8 @@ Firebase service.
 <h2 class="code-line" data-line-start=12 data-line-end=13 ><a id="Demo_12"></a>Demo</h2>
 <p class="has-line-data" data-line-start="13" data-line-end="14">Here is a working live demo : <a href="https://personal-blog-639b1.web.app">IFish</a></p>
 
+![Dashboard page](https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/admin-login.png)
+
 ## Quick Start
 
 <pre><code>git clone https://github.com/Elzier/IFish.git</code></pre>
