@@ -15,7 +15,7 @@ Firebase service.
 <div><h3 style="margin: 0"><a></a>✏️ Create page</h3><p style="margin: 0; margin-top: 10px;"><img src="https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/post-create.png" alt="screenshot"></p></div>
 
 <div>
-  <h3 style="margin: 0"><a></a>📋 Edit page</h3>
+  <h3 style="margin: 0"><a></a>📝 Edit page</h3>
   <p style="margin: 0; margin-top: 10px;"><img src="https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/post-edit.png" alt="screenshot"></p>
 </div>
 
