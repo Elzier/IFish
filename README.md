@@ -1,6 +1,29 @@
-# PersonalBlog
+# IFish 🐟
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
+A personal blog dedicated to my hobby - fishing.
+The blog consists of two functional components: the client panel and the admin panel. 
+The client panel allows you to view posts. The admin panel is protected by authorization. 
+Administrators can add, edit, and delete posts. The data is stored in the database of the 
+Firebase service.
+
+<h2 class="code-line" data-line-start=12 data-line-end=13 ><a id="Demo_12"></a>Demo</h2>
+<p class="has-line-data" data-line-start="13" data-line-end="14">Here is a working live demo : <a href="https://personal-blog-639b1.web.app">IFish</a></p>
+
+## Admin panel screenshots:
+
+<div><h3 style="margin: 0"><a></a>📋 Dashboard page</h3><p style="margin: 0; margin-top: 10px;"><img src="https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/dashboard.png" alt="screenshot"></p></div>
+<div><h3 style="margin: 0"><a></a>✏️ Create page</h3><p style="margin: 0; margin-top: 10px;"><img src="https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/post-create.png" alt="screenshot"></p></div>
+
+<div>
+  <h3 style="margin: 0"><a></a>📋 Edit page</h3>
+  <p style="margin: 0; margin-top: 10px;"><img src="https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/post-edit.png" alt="screenshot"></p>
+</div>
+
+## Quick Start
+
+<pre><code>git clone https://github.com/Elzier/IFish.git</code></pre>
+`cd IFish`\
+`npm install`
 
 ## Development server
 

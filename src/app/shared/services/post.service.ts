@@ -34,21 +34,17 @@ export class PostService {
     )
   }
 
-  fetchById(id: string): Observable<Post | null> {
-    return this.http.get<Post | null>(`${environment.fbDbUrl}/posts/${id}.json`).pipe(
-      map((res: Post | null) => {
-        if (res === null) {
-          return null
-        }
+  fetchById(id: string): Observable<Post> {
+    return this.http.get<Post>(`${environment.fbDbUrl}/posts/${id}.json`).pipe(
+      map((res: Post) => {
         return {
           ...res,
           id,
           date: new Date(res.date)
         }
       }),
-      catchError((err) => {
-        console.log(err)
-        return throwError(err)
+      catchError(() => {
+        return throwError(() => "Post not found!")
       })
     )
   }

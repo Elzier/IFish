@@ -4,8 +4,10 @@
 @import '~quill/dist/quill.snow.css';
 
 :root {
-  --primary-color: #dc3545;
+  --primary-color: #185886;
   --dark-color: #333333;
+  //--dark-color: #A6D5FF;
+  --light-blue-color: #A6D5FF;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
@@ -47,7 +49,7 @@ img {
   max-width: 1100px;
   margin: auto;
   overflow: hidden;
-  padding: 0 2rem;
+  padding: 0 2rem 4rem 2rem;
 }
 
 .text-primary {
@@ -111,12 +113,23 @@ img {
     background: var(--light-color);
     color: #111;
   }
+
+  &.open {
+    display: block;
+    color: var(--danger-color);
+  }
 }
 
 .btn-link {
   background: none;
   padding: 0;
   margin: 0;
+}
+
+.item-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .btn-block {
@@ -213,18 +226,28 @@ img {
 
 .form-control {
   display: block;
-  color: #888;
   margin-bottom: .8rem;
 
   &.invalid {
-    color: var(--primary-color);
+    color: var(--danger-color);
     input {
-      border-color: var(--primary-color);
+      border-color: var(--danger-color);
     }
   }
-
   .validation {
-    color: var(--primary-color);
+    color: var(--danger-color);
+  }
+}
+
+quill-editor {
+  &.invalid {
+    .ql-container {
+      border-color: var(--danger-color);
+      border-top: unset;
+    }
+    .ql-toolbar {
+      border-bottom: 1px solid var(--danger-color);
+    }
   }
 }
 
@@ -233,21 +256,33 @@ input[type='email'],
 input[type='password'],
 input[type='date'],
 select,
-textarea,
-.ql-editor {
+textarea {
   display: block;
   width: 100%;
   color: black;
-  padding: 0.4rem 0.6rem;
+  padding: 0.4rem 0.8rem;
   font-size: 1.2rem;
   border: 1px solid #ccc;
 }
 
-.ql-editor.ql-blank::before {
-  font-size: 1rem;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
+.quel-view {
+  .ql-container {
+    .ql-editor {
+      padding: unset;
+    }
+  }
+  //&.ng-touched &.ng-invalid &.ng-dirty {
+  //  .validation {
+  //    .too-short {
+  //      display: block;
+  //    }
+  //  }
+  //}
+  //.validation {
+  //  .too-short {
+  //    display: none;
+  //  }
+  //}
 }
 
 input[type='submit'],
@@ -264,6 +299,16 @@ table th,
 table td {
   padding: 1rem;
   text-align: left;
+}
+
+.error {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    margin-bottom: 2rem;
+  }
 }
 
 table th {
@@ -290,7 +335,7 @@ table th {
   }
 
   li.active a {
-    color: var(--dark-color);
+    color: var(--light-blue-color);
     font-weight: bold;
     cursor: default;
   }

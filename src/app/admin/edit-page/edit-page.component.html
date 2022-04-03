@@ -1,9 +1,14 @@
 <div>
-  <form *ngIf="!loading && form" [formGroup]="form" (ngSubmit)="editPost()">
-    <div class="form-control">
+  <form
+    *ngIf="!loading && form"
+    [formGroup]="form"
+    (ngSubmit)="editPost()"
+  >
+    <div class="form-control"
+         [ngClass]="{invalid: formService.touchedAndInvalidControl('title')}">
       <label for="title">Post name:</label>
       <input id="title" type="text" formControlName="title">
-      <div class="validation">
+      <div class="validation" *ngIf="formService.touchedAndInvalidControl('title')">
         <small>
           Enter post name
         </small>
@@ -11,14 +16,37 @@
     </div>
 
     <div class="form-control">
-      <quill-editor theme="bubble"   formControlName="text"></quill-editor>
+      <quill-editor
+        theme="snow"
+        formControlName="text"
+        [minLength]="20"
+        [required]="true"
+        [ngClass]="{invalid: formService.touchedAndInvalidControl('text')}"
+      ></quill-editor>
+      <div class="validation" *ngIf="formService.touchedAndInvalidControl('text')">
+        <small
+          *ngIf="form.get('text')?.errors?.['required']"
+        >
+          Field can't be empty!
+        </small>
+        <small
+          class="too-short"
+          *ngIf="form.get('text')?.hasError('minLengthError')"
+        >
+          Post text is too short. There are
+          {{formService.calcQuillCntrlRemainChars('text')}}
+          characters left.
+        </small>
+      </div>
     </div>
 
-    <button
-      class="btn btn-primary"
-      type="submit"
-      [disabled]="form.invalid || submitted"
-    >Update</button>
+    <div class="ctx__wrapper">
+      <button
+        class="btn btn-primary ctx__update"
+        type="submit"
+        [disabled]="form.invalid || submitted"
+      >Update</button>
+    </div>
   </form>
 </div>
 
