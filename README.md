@@ -11,9 +11,16 @@ Firebase service.
 
 ## Admin panel screenshots 
 
-![Dashboard page](https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/dashboard.png)
-![Create page](https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/post-create.png)
-![Edit page](https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/post-edit.png)
+<div style="display: flex; flex-direction: column; align-items: center">
+  <h3>📋 Dashboard page</h3>
+  <p style="margin: 0; width: 90%"><img src="https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/dashboard.png" alt="dashboard"></p>
+</div>
+
+📋 Dashboard page ![Dashboard page](https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/dashboard.png)
+
+✏️ Create page ![Create page](https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/post-create.png)
+
+Edit page ![Edit page](https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/post-edit.png)
 
 ## Quick Start
 
