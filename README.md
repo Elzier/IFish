@@ -9,18 +9,15 @@ Firebase service.
 <h2 class="code-line" data-line-start=12 data-line-end=13 ><a id="Demo_12"></a>Demo</h2>
 <p class="has-line-data" data-line-start="13" data-line-end="14">Here is a working live demo : <a href="https://personal-blog-639b1.web.app">IFish</a></p>
 
-## Admin panel screenshots 
+## Admin panel screenshots:
 
-<div style="outline: 1px solid black; background: red;">
-  <h3 class="code-line" data-line-start=18 data-line-end=19 ><a id="Project_Structure_18"></a>📋 Dashboard page </h3>
-  <p class="has-line-data" data-line-start="19" data-line-end="20"><img src="https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/dashboard.png" width=65%" alt="project structure"></p>
+<div><h3 style="margin: 0"><a></a>📋 Dashboard page</h3><p style="margin: 0; margin-top: 10px;"><img src="https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/dashboard.png" alt="screenshot"></p></div>
+<div><h3 style="margin: 0"><a></a>✏️ Create page</h3><p style="margin: 0; margin-top: 10px;"><img src="https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/post-create.png" alt="screenshot"></p></div>
+
+<div>
+  <h3 style="margin: 0"><a></a>📋 Edit page</h3>
+  <p style="margin: 0; margin-top: 10px;"><img src="https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/post-edit.png" alt="screenshot"></p>
 </div>
-
-📋 Dashboard page ![Dashboard page](https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/dashboard.png)
-
-✏️ Create page ![Create page](https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/post-create.png)
-
-Edit page ![Edit page](https://raw.githubusercontent.com/Elzier/IFish/styling/src/assets/screenshots/post-edit.png)
 
 ## Quick Start
 
